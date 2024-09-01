@@ -6,5 +6,4 @@ export interface Student {
   lastName: string;
   mainTeacher: Teacher;
   school: string;
-  name: string;
 }

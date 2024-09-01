@@ -29,6 +29,7 @@ const teachers: Teacher[] = [
   randTeacher(),
   randTeacher(),
   randTeacher(),
+  randTeacher(),
 ];
 
 const factoryStudent = incrementalNumber();
@@ -37,7 +38,6 @@ export const randStudent = (): Student => ({
   id: factoryStudent(),
   firstName: randFirstName(),
   lastName: randLastName(),
-  name: randFirstName(),
   mainTeacher: teachers[randNumber({ max: teachers.length - 1 })],
   school: randWord(),
 });
@@ -58,7 +58,13 @@ export const randomCity = (): City => ({
   country: randCountry(),
 });
 
-const cities = [randomCity(), randomCity(), randomCity()];
+const cities = [
+  randomCity(),
+  randomCity(),
+  randomCity(),
+  randomCity(),
+  randomCity(),
+];
 
 @Injectable({
   providedIn: 'root',
