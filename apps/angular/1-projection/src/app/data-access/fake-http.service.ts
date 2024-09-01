@@ -20,6 +20,7 @@ export const randTeacher = () => ({
   id: factoryTeacher(),
   firstName: randFirstName(),
   lastName: randLastName(),
+  name: randFirstName(),
   subject: rand(subject),
 });
 
@@ -36,6 +37,7 @@ export const randStudent = (): Student => ({
   id: factoryStudent(),
   firstName: randFirstName(),
   lastName: randLastName(),
+  name: randFirstName(),
   mainTeacher: teachers[randNumber({ max: teachers.length - 1 })],
   school: randWord(),
 });

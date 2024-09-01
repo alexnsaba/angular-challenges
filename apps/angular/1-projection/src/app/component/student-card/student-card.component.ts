@@ -11,6 +11,7 @@ import { CardComponent } from '../../ui/card/card.component';
     <app-card
       [list]="students"
       [type]="cardType"
+      [cardImage]="imageUrl"
       customClass="bg-light-green"></app-card>
   `,
   standalone: true,
@@ -26,6 +27,7 @@ import { CardComponent } from '../../ui/card/card.component';
 export class StudentCardComponent implements OnInit {
   students: Student[] = [];
   cardType = CardType.STUDENT;
+  imageUrl = 'assets/img/student.webp';
 
   constructor(
     private http: FakeHttpService,

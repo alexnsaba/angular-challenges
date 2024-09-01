@@ -12,19 +12,12 @@ import { ListItemComponent } from '../list-item/list-item.component';
     <div
       class="flex w-fit flex-col gap-3 rounded-md border-2 border-black p-4"
       [class]="customClass">
-      <img
-        *ngIf="type === CardType.TEACHER"
-        src="assets/img/teacher.png"
-        width="200px" />
-      <img
-        *ngIf="type === CardType.STUDENT"
-        src="assets/img/student.webp"
-        width="200px" />
+      <img [src]="cardImage" width="200px" />
 
       <section>
         <app-list-item
           *ngFor="let item of list"
-          [name]="item.firstName"
+          [name]="item.name"
           [id]="item.id"
           [type]="type"></app-list-item>
       </section>
@@ -42,6 +35,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
 export class CardComponent {
   @Input() list: any[] | null = null;
   @Input() type!: CardType;
+  @Input() cardImage = '';
   @Input() customClass = '';
 
   CardType = CardType;
