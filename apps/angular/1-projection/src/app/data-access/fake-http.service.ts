@@ -40,6 +40,7 @@ export const randStudent = (): Student => ({
   lastName: randLastName(),
   mainTeacher: teachers[randNumber({ max: teachers.length - 1 })],
   school: randWord(),
+  name: randFirstName(),
 });
 
 const students: Student[] = [
